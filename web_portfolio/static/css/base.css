@@ -1,0 +1,125 @@
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --secondary-color: hsl(89, 100%, 59%);
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: hsl(0, 0%, 40%);
+}
+
+img {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* 
+------------------------------
+Tool Bar Styling
+------------------------------
+*/
+.toolbar_container{
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 6px 19px -1px rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.toolbar {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: hsl(0, 1%, 23%);
+    justify-content: center;
+
+    font-size: 1rem;
+    gap: 0.2em
+    
+}
+
+.toolbar_item {
+    cursor: pointer;
+    position: relative;
+    padding: 1em;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.toolbar_item::after {
+    content: "";
+    width: 100%;
+    height: 0.3em;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 15px;
+    visibility: hidden;
+}
+
+.toolbar_item:active {
+    color: var(--secondary-color);
+}
+
+.toolbar_item:hover {
+    color: var(--secondary-color);
+}
+
+.toolbar_item:hover::after{
+    visibility: visible;
+}
+
+.active , .active.toolbar_item::after{
+    color: var(--secondary-color);
+    visibility: visible;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0.3em 0em 0.5em;
+    width: 100%;
+    background-color: hsl(0, 0%, 40%);
+}
+
+#social_links {
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+}
+
+
+.social_link i {
+    color: hsla(0, 0%, 100%, 0.7);
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    transition: 0.2s color ;
+}
+
+.social_link i:hover {
+    color:var(--secondary-color);;  
+}
+
+@media (min-width: 750px) {
+    .toolbar {
+        gap: 2.0em;
+    }
+}
