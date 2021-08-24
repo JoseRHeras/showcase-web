@@ -1,0 +1,42 @@
+{% extends 'base/base.html'%}
+{% load static%}
+
+
+{% block title%} Jose R Heras | Software Developer  {% endblock%}
+
+{% block javascript%}
+    <script src="{% static 'javascript/home.js'%}"></script>
+{% endblock%}
+
+<!-- CSS rendering -->
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+ 
+{% block body %}
+    
+    <div class="wrapper">
+        <span class="spacer"></span>
+        <div class="author_data">
+            <h1>{{ user.first_name }} {{user.middle_name}} {{user.last_name}}</h1>
+
+            <h2>{{ user.short_message }}</h2>
+        
+            <div class="welcome_board">
+                <img src="{{ user.profile_image.url }}" alt="User profile picture" class="avatar">
+                
+
+                <h2>{{ user.welcome_message }}</h2>
+        
+                <p>{{ user.paragraph_message }}</p>
+            </div>
+        </div>
+
+        <!-- Animation objects container -->
+        <div class="animation_box">
+            <ul id="animation_items_list"></ul>
+        </div>
+
+    </div>
+
+{% endblock%}
