@@ -2,7 +2,7 @@
 {% load static%}
 
 
-{% block title%} Jose R Heras | Software Developer  {% endblock%}
+{% block title %} Jose R Heras | Software Developer  {% endblock%}
 
 {% block javascript%}
     <script src="{% static 'javascript/home.js'%}"></script>
@@ -25,7 +25,6 @@
             <div class="welcome_board">
                 <img src="{{ user.profile_image.url }}" alt="User profile picture" class="avatar">
                 
-
                 <h2>{{ user.welcome_message }}</h2>
         
                 <p>{{ user.paragraph_message }}</p>
