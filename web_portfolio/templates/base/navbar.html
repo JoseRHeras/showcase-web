@@ -1,12 +1,28 @@
-<nav class="toolbar_container">
-    <ul class="toolbar">
-        <li class="toolbar_item active">
-            <a href="{% url 'home_page' %}">Home</a>
-        </li>
-        <li class="toolbar_item">
-            <a href="{% url 'project_page' %}">Projects</a>
-        </li>
-        <li class="toolbar_item">Resume</li>
-        <li class="toolbar_item">About</li>
-    </ul>
-</nav>
+
+
+<header>
+    <div class="nav-menu-wrapper">
+        <label for="nav-menu-dropdown" class="nav-menu-label">
+            <span></span>
+        </label>
+
+        <input type="checkbox" name="" id="nav-menu-dropdown" class="nav-checkbox">
+
+        <nav class="toolbar_container" id="nav-menu-dropdown">
+            <ul class="nav-menu" >
+                <li class="menu-item active">
+                    <a href="{% url 'home_page' %}">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{% url 'projects_page'%}">Projects</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Resume</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">About</a>
+                </li>                
+            </ul>
+        </nav>
+    </div>
+</header>

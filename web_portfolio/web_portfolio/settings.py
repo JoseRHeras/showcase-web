@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.projects',
     'landing_page',
     'personal_projects',
     'django.contrib.admin',

@@ -4,10 +4,6 @@
 
 {% block title %} Jose R Heras | Software Developer  {% endblock%}
 
-{% block javascript%}
-    <script src="{% static 'javascript/home.js'%}"></script>
-{% endblock%}
-
 <!-- CSS rendering -->
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -30,12 +26,6 @@
                 <p>{{ user.paragraph_message }}</p>
             </div>
         </div>
-
-        <!-- Animation objects container -->
-        <div class="animation_box">
-            <ul id="animation_items_list"></ul>
-        </div>
-
     </div>
 
 {% endblock%}
