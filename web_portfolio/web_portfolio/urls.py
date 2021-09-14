@@ -21,13 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    path('', include("landing_page.urls")),
-    path('projects', include("personal_projects.urls"))
-=======
     path('', include("landing_page.urls"), name="landing"),
     path('projects', include('apps.projects.urls'))
->>>>>>> projects
 ]
 
 
