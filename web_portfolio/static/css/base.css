@@ -4,7 +4,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    --secondary-color: hsl(89, 100%, 59%);
+
+    --primary-color: hsl(0, 0%, 40%);
+    --secondary-color: hsl(140, 88%, 52%);
+    --test: red;
 }
 
 html {
@@ -16,12 +19,16 @@ ul {
 }
 
 body {
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--primary-color);
 }
 
 img {
     max-width: 100%;
     box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -30,63 +37,161 @@ img {
 Tool Bar Styling
 ------------------------------
 */
-.toolbar_container{
-    width: 100%;
-    
+
+header {
+    background-color: hsl(0, 0%, 25%);
     position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 0px 6px 19px -1px rgba(0, 0, 0, 0.75);
-    z-index: 1;
-}
-
-.toolbar {
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: hsl(0, 1%, 23%);
-    justify-content: center;
-
-    font-size: 1rem;
-    gap: 0.2em
-    
-}
-
-.toolbar_item {
-    cursor: pointer;
-    position: relative;
-    padding: 1em;
-    color: whitesmoke;
-    font-weight: 500;
-}
-
-.toolbar_item::after {
-    content: "";
     width: 100%;
-    height: 0.3em;
-    background-color: var(--secondary-color);
+    z-index: 100;
+}
+
+/* Nav container with links */
+nav {
+    background-color: hsl(0, 0%, 25%);
+    width: 100%;
+    
     position: absolute;
-    bottom: 0;
     left: 0;
-    border-radius: 15px;
-    visibility: hidden;
+    top: 100%;
+
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 350ms ease-in-out;
+
+    font-size: 1.1rem;
+
 }
 
-.toolbar_item:active {
+.menu-item {
+    padding: 0.7em 1rem;
+    color: hsl(0, 0%, 80%);
+    transition: all 100ms ease-in;
+}
+
+.menu-item:hover {
+    /* color: hsl(140, 88%, 52%); */
+    color: var(--secondary-color);
+    background-color: hsl(0, 0%, 45%);
+}
+
+.menu-item a {
+    color: inherit;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+/* Link Focus */
+.menu-item a:focus {
     color: var(--secondary-color);
 }
 
-.toolbar_item:hover {
+/* Underline Bar Settings */
+.active a {
+    position: relative;
     color: var(--secondary-color);
 }
 
-.toolbar_item:hover::after{
-    visibility: visible;
+.active a::before {
+    content: "";
+
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: hsl(140, 88%, 52%);
+    
+    position: absolute;
+    top: 120%; 
 }
 
-.active , .active.toolbar_item::after{
-    color: var(--secondary-color);
-    visibility: visible;
+/* Checkbox Toggle */
+.nav-checkbox {
+    display: none;
 }
+
+/* Nav Container animation settings*/
+
+.nav-checkbox:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+.nav-checkbox:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 150ms ease-in-out 450ms;
+}
+
+/* Mobile Toggle Label */
+.nav-menu-label {
+    height: 3em;
+    width: 2em;
+    margin-left: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;    
+}
+
+
+.nav-menu-label span,
+.nav-menu-label span::before,
+.nav-menu-label span::after {
+    background-color: white;
+    border-radius: 2px;
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 2em;
+}
+
+.nav-menu-label span::before,
+.nav-menu-label span::after {
+    content: "";
+    position: absolute;
+}
+
+.nav-menu-label span::before {
+    bottom: 7px;
+}
+
+.nav-menu-label span::after {
+    top: 7px;
+}
+
+.nav-menu-label:checked ~ .nav-menu {
+    transform: scale(1, 1);
+}
+
+/* Normal Screen Media Query */
+@media (min-width:500px) {
+    
+    .nav-menu-wrapper {
+        max-width: 750px;
+        margin: 0 auto;
+        height: 3rem;
+    }
+
+    .nav-menu-label {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        transform: none;    
+    }
+
+    .menu-item a {
+        opacity: 1;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+
 
 /* Footer */
 footer {
@@ -94,7 +199,7 @@ footer {
     bottom: 0;
     padding: 0.3em 0em 0.5em;
     width: 100%;
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--primary-color);
 }
 
 #social_links {
@@ -121,5 +226,83 @@ footer {
 @media (min-width: 750px) {
     .toolbar {
         gap: 2.0em;
+    }
+}
+
+
+/* Animation */
+.animation_box { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.animation_item {
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 20s linear infinite;
+}
+
+.animation_item:nth-child(1) {
+    bottom: -100px;
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 1.2s;
+}
+
+.animation_item:nth-child(2) {
+    bottom: -100px;
+    left: 20%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 6s;
+}
+
+.animation_item:nth-child(3) {
+    bottom: -100px;
+    left: 40%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 10s;
+}
+
+.animation_item:nth-child(4) {
+    bottom: -100px;
+    left: 60%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 3s;
+}
+
+.animation_item:nth-child(5) {
+    bottom: -100px;
+    left: 80%;
+    width: 35px;
+    height: 35px;
+    animation-delay: 7s;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        border-radius: 50%;
+    }
+
+
+    100% {
+        border-radius: 0%;
+        transform:translateY(-100vh) rotate(360deg);
+        opacity: 0;
     }
 }
