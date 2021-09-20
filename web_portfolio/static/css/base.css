@@ -7,7 +7,19 @@
 
     --primary-color: hsl(0, 0%, 40%);
     --secondary-color: hsl(140, 88%, 52%);
+
+    
+    --primary-variant: hsl(0, 0%, 25%);
+
+    --secondary-color: hsl(140, 88%, 52%);
+    --accent-color: hsl(150, 1%, 62%);
+
     --test: red;
+
+    --ftw--light: 300;
+    --ftw--normal: 500;
+    --ftw--bold: 700;
+    
 }
 
 html {
@@ -31,6 +43,11 @@ a {
     text-decoration: none;
 }
 
+/* Spacer */
+.spacer {
+    display: block;
+    height: 13vh; 
+}
 
 /* 
 ------------------------------

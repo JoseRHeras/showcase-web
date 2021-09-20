@@ -1,0 +1,171 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}">
+{% endblock%}
+
+{% block body %}
+<main>
+
+    <div class="spacer"></div>
+        
+    <article>
+        <section class="contact">
+            <h2>User Name</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Chicago, IL</span>
+                </li>
+                <li>
+                    <i class="fas fa-envelope-open-text"></i>
+                    <span>Email</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="objective">
+            <h2>Objective</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolore mollitia natus, minus saepe recusandae eum reprehenderit ratione quaerat debitis dignissimos fugit. Mollitia iusto perferendis error est quos ducimus consectetur!
+                Doloremque inventore ipsum.
+            </p>
+        </section>
+
+        <section class="skills">
+            
+            <h2>Technical Knowledge</h2>
+            
+            <ul class="technical_skills">
+                    <li class="skill">Lorem <i class="fab fa-python"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-html5"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-git-alt"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-python"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-html5"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-git-alt"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-python"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-html5"></i></li>
+                    <li class="skill">Lorem <i class="fab fa-git-alt"></i></li>
+                </ul>
+            
+        </section>
+
+        <section class="skills">
+            <h2>Soft Skills</h2>
+            
+            <ul class="soft_skills">
+                <li class="skill">Lorem <i class="fab fa-python"></i></li>
+                <li class="skill">Lorem <i class="fab fa-html5"></i></li>
+                <li class="skill">Lorem <i class="fab fa-git-alt"></i></li>
+                <li class="skill">Lorem <i class="fab fa-python"></i></li>
+                <li class="skill">Lorem <i class="fab fa-html5"></i></li>
+                <li class="skill">Lorem <i class="fab fa-git-alt"></i></li>
+                <li class="skill">Lorem <i class="fab fa-python"></i></li>
+                <li class="skill">Lorem <i class="fab fa-html5"></i></li>
+                <li class="skill">Lorem <i class="fab fa-git-alt"></i></li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <ul class="project_list">
+                <li class="project">           
+                    <h3>Project 1</h3>
+                    <ul class="duties">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. .</li>
+                        <li>Commodi vel provident iste inventore totam labore, enim omnis.</li>
+                        <li>Voluptatum ipsam quod in explicabo, similique veniam totam alias saepe.</li>
+                    </ul>     
+                </li>
+
+                <li class="project">           
+                    <h3>Project 2</h3>
+                    <ul class="duties">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                        <li>Commodi vel provident iste inventore totam labore, enim omnis.</li>
+                        <li>Voluptatum ipsam quod in explicabo, similique veniam totam alias saepe.</li>
+                    </ul>     
+                </li>
+
+                <li class="project">           
+                    <h3>Project 3</h3>
+                    <ul class="duties">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. .</li>
+                        <li>Commodi vel provident iste inventore totam labore, enim omnis.</li>
+                        <li>Voluptatum ipsam quod in explicabo, similique veniam totam alias saepe.</li>
+                    </ul>     
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <div>
+                        <h3>School Name</h3>
+                        <p>City, IL</p>
+                    </div>
+                    <p class="res_title">Title Obtained</p>
+                    <p class="grad_date">2021</p>
+                </li>
+                <li>
+                    <div>
+                        <h3>School Name</h3>
+                        <p>City, IL</p>
+                    </div>
+                    <p class="res_title">Title Obtained</p>
+                    <p class="grad_date">2021</p>
+                </li>
+                
+            </ul>
+        </section>
+        
+        <section class="work_history">
+            <h2>Work History</h2>
+            <ul>
+                <li>
+                    <div>
+                        <h3>Work Place 1</h3>
+                        <p class="res_title">Job res_title</p>
+                        <p>2000 - 2000</p>
+                    </div>
+                    <ul class="duties">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. .</li>
+                        <li>Commodi vel provident iste inventore totam labore, enim omnis.</li>
+                        <li>Voluptatum ipsam quod in explicabo, similique veniam totam alias saepe.</li>
+                    </ul>  
+                </li>
+                <li>
+                    <div>
+                        <h3>Work Place 1</h3>
+                        <p class="res_title">Job res_title</p>
+                        <p>2000 - 2000</p>
+                    </div>
+                    <ul class="duties">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. .</li>
+                        <li>Commodi vel provident iste inventore totam labore, enim omnis.</li>
+                        <li>Voluptatum ipsam quod in explicabo, similique veniam totam alias saepe.</li>
+                    </ul>  
+                </li>
+                <li>
+                    <div>
+                        <h3>Work Place 1</h3>
+                        <p class="res_title">Job res_title</p>
+                        <p>2000 - 2000</p>
+                    </div>
+                    <ul class="duties">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. .</li>
+                        <li>Commodi vel provident iste inventore totam labore, enim omnis.</li>
+                        <li>Voluptatum ipsam quod in explicabo, similique veniam totam alias saepe.</li>
+                    </ul>  
+                </li>
+            </ul>
+        </section>
+    </article>
+
+</main>
+{% endblock %}

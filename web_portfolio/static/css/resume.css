@@ -1,0 +1,138 @@
+/* Resume Main Body */
+main {
+    font-size: 1rem;  
+}
+
+article {
+    margin-bottom: 4rem;
+}
+
+section {
+    margin: 0 1rem 1.5rem;
+    padding: 1em;
+    background-color: var(--accent-color);
+
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    font-weight: var(--ftw--light);
+
+    border-radius: 0.1rem;
+    box-shadow: #494949 2px 3px 10px 2px;
+}
+
+section h2, section h3 {
+    text-transform: uppercase;
+    color: var(--primary-variant);
+    letter-spacing: 0.03em;
+}
+
+section h2 {
+    font-size: 1rem;
+
+    margin: -1em -1.1em 1em;
+    padding: 0.8em;
+
+    color: var(--secondary-color);
+    border-bottom: var(--secondary-color) 1px solid;
+
+    background-color: var(--primary-variant);
+}
+
+
+section h3 {
+    font-weight: var(--ftw--bold);
+}
+
+section li {
+    margin-bottom: 0.5em;
+}
+
+section i {
+    color: var(--primary-variant);  
+}
+
+/* Helper Classes */
+.res_title {
+    font-style: italic;
+}
+
+.duties {
+    list-style: disc ;
+    padding-left: 1.5em;
+}
+
+/* =======================
+Specific Section Styling 
+==========================*/
+
+/* Contact Section */
+.contact i {
+    width: 1.5em;
+}
+
+/* Objective Section */
+.objective p{
+    line-height: 1.4em;
+}
+
+/* Skills Section */
+
+.skills ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.skill {
+    margin: 0;
+    font-size: 0.8rem;
+    
+    background-color: whitesmoke;
+    color: var(--primary-variant);
+    font-weight: var(--ftw--bold);
+
+    padding: 0.2em 0.5em;
+    border-radius: 1em;
+
+    box-shadow: black 1px 1px 5px -1px;
+}       
+
+/* Projects Section */
+.project_list > li {
+    margin-bottom: 1em;
+}
+
+
+
+/* Education Section */
+.education li {
+    margin-bottom: 0.5rem;
+}
+
+.education div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+
+.grad_diploma {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* Work History */
+.work_history div {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Article Query for Screen Sizes */
+@media (min-width: 750px) {
+    article {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+}

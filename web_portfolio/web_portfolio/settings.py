@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'apps.projects',
+    'apps.resume',
     'landing_page',
     'django.contrib.admin',
     'django.contrib.auth',
