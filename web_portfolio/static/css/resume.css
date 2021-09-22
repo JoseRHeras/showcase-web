@@ -103,8 +103,6 @@ Specific Section Styling
     margin-bottom: 1em;
 }
 
-
-
 /* Education Section */
 .education li {
     margin-bottom: 0.5rem;
@@ -125,6 +123,10 @@ Specific Section Styling
 /* Work History */
 .work_history div {
     margin-bottom: 0.5rem;
+}
+
+.institution {
+    margin-bottom: 1.5rem;
 }
 
 
