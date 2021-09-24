@@ -12,7 +12,7 @@
         
     <article>
         <section class="contact">
-            <h2>{{ general.name }}</h2>
+            <h2>Contact Data</h2>
             <ul>
                 <li>
                     <i class="fas fa-map-marker-alt"></i>
@@ -26,21 +26,16 @@
         </section>
 
         <section class="objective">
-            <h2>Objective</h2>
-
-            <p>
-                {{ general.objective }}
-            </p>
+            <h2>My Objective</h2>
+            <p>{{ general.objective }}</p>
         </section>
 
-        <section class="skills">
-            
-            <h2>Technical Knowledge</h2>
-            
+        <section class="skills">           
+            <h2>Technical Knowledge</h2>    
             <ul class="technical_skills">
                     {% for skill in skills %}
                         {% if skill.skill_type == "TECHNICAL_SKILL" %}
-                            <li class="skill">
+                            <li class="skill skill_ctn">
                                 {{ skill.name}}
                                 <i class="{{ skill.icon }}"></i>
                             </li>
@@ -51,41 +46,21 @@
         </section>
 
         <section class="skills">
-            <h2>Soft Skills</h2>
-            
+            <h2>Soft Skills</h2>     
             <ul class="soft_skills">
                 {% for skill in skills%}
                     {% if skill.skill_type == "SOFT_SKILL" %}
-                        <li class="skill">
-                            {{skill.name}}
-                            <i class="{{ skill.icon }}"></i>
+                        <li class="skill skill_ctn">
+                            <i class="fas fa-angle-double-right"></i>
+                            <p>{{skill.name}}</p>
                         </li>
                     {% endif %}
                 {% endfor%}
             </ul>
         </section>
 
-        <section class="projects">
-            <h2>Projects</h2>
-            <ul class="project_list">
-                {% for event in events %}
-                    {% if event.event_type == "PROJECT"%}
-                        <li class="project">           
-                            <h3>{{ event.name }}</h3>
-                            <ul class="duties">
-                                {% for duty in event.duty_set.all %}
-                                    <li>{{duty.description }}</li>
-                                {% endfor%}
-                            </ul>     
-                        </li>
-                    {% endif%}
-                {% endfor%}
-            </ul>
-        </section>
-
-
         <section class="education">
-            <h2>Education</h2>
+            <h2>Education So Far</h2>
             <ul>
                 {% for school in schools %}
                     <li>
@@ -100,27 +75,6 @@
             </ul>
         </section>
         
-        <section class="work_history">
-            <h2>Work History</h2>
-            <ul>
-                {% for event in events %}
-                    {% if event.event_type == "WORK"%}
-                        <li class="institution">
-                            <div>
-                                <h3>{{ event.name }}</h3>
-                                <p class="res_title">{{ event.title }}</p>
-                                <p>{{ event.period_range}}</p>
-                            </div>
-                            <ul class="duties">
-                                {% for duty in event.duty_set.all %}
-                                    <li>{{ duty.description }}</li>
-                                {% endfor %}
-                            </ul>  
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </section>
     </article>
 
 </main>
