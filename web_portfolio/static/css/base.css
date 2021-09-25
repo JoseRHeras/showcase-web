@@ -74,7 +74,7 @@ nav {
     transform-origin: top;
     transition: transform 350ms ease-in-out;
 
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* Mobile Toggle Label creation and styling*/
