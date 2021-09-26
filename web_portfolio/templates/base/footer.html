@@ -1,11 +1,13 @@
 
 
 <footer>
-    <ul id="social_links">
+    <ul class="social_links">
         {% for link in links %}
-            <li class="social_link">
-                <a href="{{ link.link }}" target="blank"><i class="{{ link.icon }}"></i></a>
+            <li>
+                <a href="{{ link.link }}" target="blank">
+                <i class="{{ link.icon }}"></i></a>
             </li>
         {% endfor %}       
     </ul>
 </footer>
+

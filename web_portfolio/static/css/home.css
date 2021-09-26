@@ -1,80 +1,73 @@
-/* Spacer */
+/* Spacer for home page */
 .spacer {
     display: block;
-    height: 13vh;    
+    height: 13vh; 
 }
 
+/* Main Body ------ HomePage */
 
-/* Wrapper */
-.wrapper {    
-    height: 100vh;
-    position: relative;
+
+main * {
+    font-weight: var(--ftw--light);
+    color: hsl(90, 28%, 90%);
+}
+
+.author_data h1, 
+.short_msg {
+    text-align: center;
+}
+
+main p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.author_data h2 {
+    font-size: clamp(1.7rem, 5vw, 2.3rem);
+}
+
+p:last-of-type{
+    text-indent: min(3rem, 5vw);
+    margin-top: 1rem;
 }
 
 .author_data {
-    max-width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 5rem;
+    width: min(90%, 800px);
 }
 
-.wrapper h1 , .wrapper h2{
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 0.2em;
+.author_data h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 15vw, 5rem);
 }
 
-.wrapper h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-weight: 300;
-    display: inline-block;
-    width: 100%;
-    margin: 0.7em 0;
-    color: hsl(90, 28%, 69%);
-}
-
-.wrapper h2 {
-    font-weight: 700;
-    color: hsl(90, 28%, 90%);
-    font-size: 1rem; 
-    word-spacing: 0.2em;
-}
-
-/* Welcome Board */
-.welcome_board {
-    margin-top: 3rem;
-}
-
-/* -----Avatar------ */
+.avatar_ctn, 
 .avatar {
-    width: 150px;
-    height: 150px;
     display: block;
-    margin: 0 auto;
-    border-radius: 50%;
+    border-radius: 15px;
+    background-color: var(--primary-variant);
+}
+
+
+.avatar_ctn {
+    width: 200px;
+    margin: 5rem auto;
+    padding: 0.5em;
+
+    position: relative;
+
+    display: block;
+
+}
+
+.avatar_ctn::after {
+    content: "";
+    width: 120%;
     
-}
-
-/* -----Title and message----- */
-.welcome_board h2,  .welcome_board p {
-    font-weight: 200;
-    font-size: 1.1rem;
-}
-
-.welcome_board h2 {
-    display: inline-block;
-    margin: 3em 0 1em;
-    text-transform: initial;
-    letter-spacing: 0px;
-}
-
-.welcome_board p {
-    color: hsl(90, 28%, 90%);
-    line-height: 1.4em;
-}
-
-
-@media (min-width: 750px) {
-    .author_data {
-        max-width: 700px;
-    }
+    border-radius: 50%;
+    box-shadow: var(--primary-variant) 0 0 20px 10px;
+    
+    position: absolute;
+    top: 120%;
+    left: -10%;
 }
 

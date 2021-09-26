@@ -12,6 +12,8 @@
     --accent-color: hsl(150, 1%, 62%);
     --accent-variant: hsl(0, 0%, 83%);
 
+    --white--clr: hsl(0, 0%, 96%);
+
     --ftw--light: 300;
     --ftw--normal: 500;
     --ftw--bold: 700;
@@ -128,7 +130,7 @@ nav {
     margin-bottom: 1em;
     letter-spacing: 0.125em;
     
-    color: var(--accent-variant);  
+    color: var(--white--clr);  
     display: block;
     position: relative;
  
@@ -234,42 +236,44 @@ nav {
 }
 
 
-
 /* Footer */
 footer {
     position: fixed;
     bottom: 0;
-    padding: 0.3em 0em 0.5em;
     width: 100%;
-    background-color: var(--primary-color);
+    z-index: 100;
+    background-color: var(--primary-variant);
 }
 
-#social_links {
-    height: 100%;
+.social_links {
+
+    width: min(90%, 800px);
+    margin: 0 auto;
 
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(2rem, 5vw, 5rem);
+    
+    gap: min(3rem, 4vw);
+    padding: 0.1em;
 }
 
+.social_links a {
+    height: 100%;
+    padding: 0.1em;
+    display: block;
+    color: var(--white--clr);
 
-.social_link i {
-    color: hsla(0, 0%, 100%, 0.7);
-    font-size: clamp(1.3rem, 2vw, 2rem);
-    transition: 0.2s color ;
+    transition: color 250ms ease-in-out;
+    font-size: clamp(1.3em, 5vw, 1.7em);
 }
 
-.social_link i:hover {
-    color:var(--secondary-color);;  
+.social_links a:hover,
+.social_links a:focus {
+    color: var(--secondary-color);
 }
 
-@media (min-width: 750px) {
-    .toolbar {
-        gap: 2.0em;
-    }
-}
 
 
 /* Animation */

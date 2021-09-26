@@ -11,21 +11,30 @@
  
 {% block body %}
     
-    <div class="wrapper">
-        <span class="spacer"></span>
+    <div class="spacer"></div>
+
+    <main>
+
         <div class="author_data">
             <h1>{{ user.first_name }} {{user.middle_name}} {{user.last_name}}</h1>
 
-            <h2>{{ user.short_message }}</h2>
+            <p class="short_msg">{{ user.short_message }}</p>
         
-            <div class="welcome_board">
-                <img src="{{ user.profile_image.url }}" alt="User profile picture" class="avatar">
-                
-                <h2>{{ user.welcome_message }}</h2>
-        
-                <p>{{ user.paragraph_message }}</p>
+            <div class="avatar_ctn">
+                <img src="{{ user.profile_image.url }}" alt="User profile picture" class="avatar">   
             </div>
+
+            <h2>{{ user.welcome_message }}</h2>
+        
+            <p>{{ user.paragraph_message }}</p>
         </div>
-    </div>
+
+    </main>
+
+
+
+
+
+    
 
 {% endblock%}
