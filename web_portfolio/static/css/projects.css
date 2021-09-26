@@ -1,11 +1,11 @@
 /* Spacer */
-.spacer {
+/* .spacer {
     display: block;
     height: 13vh; 
-}
+} */
 
 /* Listing projects */
-.project_list {
+/* .project_list {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -37,11 +37,11 @@
                 background-color 0.2s ease-in-out;
     
     color: hsl(0, 0%, 15%);
-}
+} */
 
 
 /* Scale container animation */
-.project_list > li:hover {
+/* .project_list > li:hover {
     transform: scale(1.1);
     font-size: 1.1rem;
     color: hsl(0, 0%, 22%);
@@ -71,12 +71,12 @@
 
 .project_link i {
     font-size: 1.7em;
-}
+} */
 
 
 
 /* Gear Icon Animation */
-.project_link i {
+/* .project_link i {
     animation: rotate 2.5s linear infinite;
     animation-play-state: paused;
 }
@@ -97,4 +97,77 @@
     100% {
         transform: rotate(360deg);
     }
+} */
+
+.project_list {
+    width: min(800px, 90%);
+    margin: 0 auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    gap: min(0.7rem, 2rem);
+
+    /* Prevents list items to be hidden behind footbar */
+    margin-bottom: 5rem;
+}
+
+
+.project_link {
+    width: min(35vw, 180px);
+    min-height: 10rem;
+    background-color: var(--primary-variant);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    color: var(--white--clr);
+}
+
+.project_link {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(1rem, 15vw, 4rem);
+    transition: all 250ms ease-in-out;
+}
+
+.project_link h3 {
+    text-align: center;
+}
+
+.project_link i {
+    animation: rotate infinite 2s linear;
+    transition: font-size 400ms ease-in-out;
+    animation-play-state: paused;
+}
+
+.project_link:hover,
+.project_link:focus {
+    filter: drop-shadow(0 0px 17px var(--secondary-color));
+    transform: scale(1.2);
+    color: var(--secondary-color);
+}
+
+.project_link:hover i,
+.project_link:focus i {
+    animation-play-state: running;
+    font-size: min(7vw, 2rem);
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    } 
 }
