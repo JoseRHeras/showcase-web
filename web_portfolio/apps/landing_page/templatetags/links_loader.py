@@ -1,6 +1,6 @@
 from typing import final
 from django import template
-from landing_page.models import SocialPlatforms
+from apps.landing_page.models import SocialPlatforms
 
 register = template.Library()
 
