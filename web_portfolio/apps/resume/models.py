@@ -48,24 +48,5 @@ class Skill(models.Model):
         def __str__(self) -> str:
             return f"{self.skill_type}: {self.name}"
 
-class Event(models.Model):
-    name = models.CharField(max_length=50)
-    title = models.CharField(max_length=80, blank=True)
-    period_range = models.CharField(max_length=50, blank=True)
 
-    EVENT_TYPE = [
-        ('PROJECT', 'Project'),
-        ('WORK', 'Work')
-    ]
-    event_type = models.CharField(max_length=50, choices=EVENT_TYPE, default="PROJECT")
-
-    def __str__(self) -> str:
-        return f"{self.event_type}: {self.name}"
-
-class Duty(models.Model):
-    name = models.ForeignKey(Event, on_delete=models.CASCADE)
-    description = models.TextField(max_length=200)
-
-    def __str__(self) -> str:
-        return f"Parent: {self.name.name}"
 
