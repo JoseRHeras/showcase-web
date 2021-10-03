@@ -14,16 +14,14 @@
         
     <article>
         <section class="contact">
-            <h2>Contact Data</h2>
+            <h2>Information</h2>
             <ul>
-                <li>
-                    <i class="fas fa-map-marker-alt"></i>
-                    {{ general.location }}
-                </li>
-                <li>
-                    <i class="fas fa-envelope-open-text"></i>
-                    {{ general.email}}
-                </li>
+                {% for item in general.informationitem_set.all %}
+                    <li>
+                        <i class="{{ item.icon }}"></i>
+                        {{item.name}}
+                    </li>
+                {% endfor %}
             </ul>
         </section>
 
